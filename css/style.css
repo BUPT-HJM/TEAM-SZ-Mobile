@@ -197,41 +197,36 @@ menu {
   -o-transform: translate(-50%, -50%) scale(0.1, 0.1);
   transform: translate(-50%, -50%) scale(0.1, 0.1);
 }
-/*
-@welcome-circle-change-top: 100px;
-//logo进入首页，变动
 .logo-left-small {
   left: 300px;
-  .scale-transform(0.8, 0.8);
+  -webkit-transform: translate(-50%, -50%) scale(0.8, 0.8);
+  -ms-transform: translate(-50%, -50%) scale(0.8, 0.8);
+  -o-transform: translate(-50%, -50%) scale(0.8, 0.8);
+  transform: translate(-50%, -50%) scale(0.8, 0.8);
 }
-
-//logo-font进入首页，变动
 .logo-font-change {
   left: 350px!important;
   top: -20px;
-  .scale-transform(1.5, 1.5);
+  -webkit-transform: translate(-50%, -50%) scale(1.5, 1.5);
+  -ms-transform: translate(-50%, -50%) scale(1.5, 1.5);
+  -o-transform: translate(-50%, -50%) scale(1.5, 1.5);
+  transform: translate(-50%, -50%) scale(1.5, 1.5);
 }
-
-//welcome-circle进入首页，变动
 .welcome-circle-change {
   z-index: 999;
   left: 95%;
-  top: @welcome-circle-change-top;
+  top: 100px;
 }
-
-//welcome-circle-img进入首页，变动,消除hover的样式
 .welcome-circle-img-change {
   opacity: 0!important;
 }
-
-//small-circle进入首页，变动，消除hover的样式
 .small-circle-change {
   opacity: 1!important;
-  .scale-transform(1, 1)!important;
+  -webkit-transform: translate(-50%, -50%) scale(1, 1) !important;
+  -ms-transform: translate(-50%, -50%) scale(1, 1) !important;
+  -o-transform: translate(-50%, -50%) scale(1, 1) !important;
+  transform: translate(-50%, -50%) scale(1, 1) !important;
 }
-
-@nav-circle-width: 16px; //
-//右上角菜单
 .nav-line {
   position: absolute;
   top: 50px;
@@ -240,96 +235,99 @@ menu {
   height: 100px;
   background: url("../img/line.png") 50% 50% repeat-x;
   opacity: 0;
-  .transition(all,
-  0.5s,
-  linear);
-  & .nav-item {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    float: left;
-    & img {
-      position: absolute;
-      left: -10px;
-      top: 9px;
-      height: 18px;
-    }
-    & .nav-hover {
-      left: -4px;
-      top: 61px;
-      height: 8px;
-      width: 24px;
-      opacity: 0;
-      .transition(all,
-      0.2s,
-      linear);
-    }
-  }
-  & .nav-index {
-    left: 5%;
-  }
-  & .nav-timeline {
-    left: 20%;
-  }
-  & .nav-contact {
-    left: 35%;
-  }
-  & .nav-circle {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    .border-radius(@nav-circle-width);
-    width: @nav-circle-width;
-    height: @nav-circle-width;
-    background-color: #fff;
-  }
-  & .nav-index:hover>img {
-    opacity: 1;
-  }
-  & .nav-timeline:hover>img {
-    opacity: 1;
-  }
-  & .nav-contact:hover>img {
-    opacity: 1;
-  }
-  //点击nav小圆弧效果
-  & .nav-under-line-show {
-    opacity: 1!important;
-  }
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
-
-//进入首页后的右上角菜单
+.nav-line .nav-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  float: left;
+}
+.nav-line .nav-item img {
+  position: absolute;
+  left: -10px;
+  top: 9px;
+  height: 18px;
+}
+.nav-line .nav-item .nav-hover {
+  left: -4px;
+  top: 61px;
+  height: 8px;
+  width: 24px;
+  opacity: 0;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.nav-line .nav-index {
+  left: 5%;
+}
+.nav-line .nav-timeline {
+  left: 20%;
+}
+.nav-line .nav-contact {
+  left: 35%;
+}
+.nav-line .nav-circle {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  border-radius: 16px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+}
+.nav-line .nav-index:hover > img {
+  opacity: 1;
+}
+.nav-line .nav-timeline:hover > img {
+  opacity: 1;
+}
+.nav-line .nav-contact:hover > img {
+  opacity: 1;
+}
+.nav-line .nav-under-line-show {
+  opacity: 1!important;
+}
 .nav-line-change {
   width: 600px;
   opacity: 1;
 }
-
-//左下角微博分享和加入我们
 .share-join {
   position: absolute;
   left: 100px;
   bottom: 0px;
   width: 300px;
   height: 80px;
-  & img {
-    display: inline-block;
-    margin-right: 15px;
-    cursor: pointer;
-  }
   opacity: 0;
-  .transition;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
-
-//进入首页后的左下角
+.share-join img {
+  display: inline-block;
+  margin-right: 15px;
+  cursor: pointer;
+}
 .share-join-show {
   opacity: 1;
 }
-
-//团队介绍
 .introduction {
   position: absolute;
   left: 200px;
@@ -339,19 +337,15 @@ menu {
   padding: 20px;
   color: #ad956c;
   opacity: 0;
-  .transition(all,
-  1s,
-  ease-in-out);
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
-
-//进入首页团队介绍变动旋转的效果
 .introduction-show {
   opacity: 1;
 }
-
-
-//ripple动画
-
 @keyframes ripple {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1);
@@ -360,7 +354,6 @@ menu {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0);
   }
 }
-
 @-moz-keyframes ripple {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1);
@@ -369,7 +362,6 @@ menu {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0);
   }
 }
-
 @-webkit-keyframes ripple {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1);
@@ -378,7 +370,6 @@ menu {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0);
   }
 }
-
 @-o-keyframes ripple {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1);
@@ -387,297 +378,305 @@ menu {
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0);
   }
 }
-
-
-//click nav-item
-
 .introduction-hide {
   opacity: 0;
 }
-
 .logo-font-change-second {
   opacity: 0;
 }
-
-@logo-small-scale: 0.4;
 .logo-top-left {
   left: 0;
   top: -30px;
-  -webkit-transform: rotate(0deg) scale(@logo-small-scale, @logo-small-scale);
-  -ms-transform: rotate(0deg) scale(@logo-small-scale, @logo-small-scale);
-  -o-transform: rotate(0deg) scale(@logo-small-scale, @logo-small-scale);
-  transform: rotate(0deg) scale(@logo-small-scale, @logo-small-scale);
-  //上面为重置
+  -webkit-transform: rotate(0deg) scale(0.4, 0.4);
+  -ms-transform: rotate(0deg) scale(0.4, 0.4);
+  -o-transform: rotate(0deg) scale(0.4, 0.4);
+  transform: rotate(0deg) scale(0.4, 0.4);
   width: 200px;
   cursor: pointer;
-  .transition(all,
-  1s,
-  linear);
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  transition: all 1s linear;
 }
-
 .snow-hide {
   opacity: 0;
 }
-
-//时间线
-@timeline-height: 200px;
-@timeline-small-circle-width: 20px;
-@timeline-item-width: 40px;
-@timeline-big-item-width: 70px;
-@timeline-item-img-width: 200px;
-@timeline-triangle-border: 10px;
 .timeline {
   position: absolute;
   top: 150px;
   left: 1000px;
-  //left: 200px;
   width: 1100px;
-  height: @timeline-height;
+  height: 200px;
   background: url("../img/timeline-line.png") 50% 50% repeat-x;
   opacity: 0;
-  .transition(all,
-  1s,
-  ease-in-out);
-  & .timeline-small-circle {
-    position: absolute;
-    top: 90px;
-    width: @timeline-small-circle-width;
-    height: @timeline-small-circle-width;
-    .border-radius(@timeline-small-circle-width);
-    background-color: #ae956b;
-    cursor: pointer;
-  }
-  & .timeline-end {
-    right: 0;
-  }
-  // & .timeline-front:hover {
-  //     width: 0;
-  //     height: 0;
-  //     background-color: transparent;
-  //     border-top: @timeline-triangle-border solid transparent;
-  //     border-bottom: @timeline-triangle-border solid transparent;
-  //     border-right: @timeline-triangle-border*2 solid #ae956b;
-  //     .border-radius(0px);
-  // }
-  // & .timeline-end:hover {
-  //     width: 0;
-  //     height: 0;
-  //     background-color: transparent;
-  //     border-top: @timeline-triangle-border solid transparent;
-  //     border-bottom: @timeline-triangle-border solid transparent;
-  //     border-left: @timeline-triangle-border*2 solid #ae956b;
-  //     .border-radius(0px);
-  // }
-  & .timeline-item {
-    position: relative;
-    top: @timeline-height/2-@timeline-item-width/2;
-    float: left;
-    width: @timeline-item-width;
-    height: @timeline-item-width;
-    line-height: @timeline-item-width;
-    margin-left: 200px;
-    background-color: #000;
-    border: 1px solid #ae956b;
-    .border-radius(@timeline-item-width);
-    color: #ae956b;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-    .transition();
-    & .timeline-item-line {
-      position: absolute;
-      left: 0;
-      top: @timeline-item-width;
-      width: @timeline-item-width;
-      height: 0;
-      //height: 200px;
-      background: url("../img/timeline-item-line.png") 50% 50% repeat-y;
-      opacity: 0;
-      .transition();
-    }
-    & .timeline-item-img {
-      position: absolute;
-      top: 0;
-      //top: 70px;
-      //left: -@timeline-item-img-width/2+@timeline-item-width/2;
-      left: @timeline-item-width/2;
-      width: 1px;
-      height: 1px;
-      .border-radius(@timeline-item-img-width);
-      border: 1px solid #ae956b;
-      background-color: #000;
-      opacity: 0;
-      .transition();
-      & .event {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        margin: auto;
-        line-height: 100px;
-        display: inline-block;
-      }
-    }
-    & .timeline-item-year {
-      position: absolute;
-      top: -25px;
-      left: 4px;
-      opacity: 0;
-      .transition(opacity);
-    }
-    & .timeline-item-p {
-      .transition(opacity);
-    }
-    & .timeline-item-detail {
-      position: absolute;
-      top: 0;
-      left: 8px;
-      opacity: 0;
-      .transition(opacity);
-    }
-  }
-  & .tiemline-item:hover > .timeline-item-detail {
-    opacity: 1;
-  }
-  & .timeline-item:hover {
-    top: @timeline-height/2-@timeline-big-item-width/2;
-    width: @timeline-big-item-width;
-    height: @timeline-big-item-width;
-    line-height: @timeline-big-item-width;
-    .border-radius(@timeline-big-item-width);
-  }
-  & .timeline-item:hover > .timeline-item-p {
-    visibility: hidden;
-  }
-  & .timeline-item:hover > .timeline-item-detail {
-    opacity: 1;
-  }
-  & .timeline-item:hover > .timeline-item-year {
-    opacity: 1;
-  }
-  & .timeline-item:hover > .timeline-item-line {
-    top: @timeline-big-item-width;
-    width: @timeline-big-item-width;
-    opacity: 1;
-    height: 40px;
-  }
-  & .timeline-item:hover > .timeline-item-img {
-    top: 90px;
-    left: -@timeline-item-img-width/2+@timeline-big-item-width/2;
-    width: @timeline-item-img-width;
-    height: @timeline-item-img-width;
-    opacity: 1;
-  }
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
-
-//时间线出现
+.timeline .timeline-small-circle {
+  position: absolute;
+  top: 90px;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #ae956b;
+  cursor: pointer;
+}
+.timeline .timeline-end {
+  right: 0;
+}
+.timeline .timeline-item {
+  position: relative;
+  top: 80px;
+  float: left;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 200px;
+  background-color: #000;
+  border: 1px solid #ae956b;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  border-radius: 40px;
+  color: #ae956b;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.timeline .timeline-item .timeline-item-line {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 40px;
+  height: 0;
+  background: url("../img/timeline-item-line.png") 50% 50% repeat-y;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.timeline .timeline-item .timeline-item-img {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 1px;
+  height: 1px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
+  border: 1px solid #ae956b;
+  background-color: #000;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.timeline .timeline-item .timeline-item-img .event {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  line-height: 100px;
+  display: inline-block;
+}
+.timeline .timeline-item .timeline-item-year {
+  position: absolute;
+  top: -25px;
+  left: 4px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+.timeline .timeline-item .timeline-item-p {
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+.timeline .timeline-item .timeline-item-detail {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+.timeline .tiemline-item:hover > .timeline-item-detail {
+  opacity: 1;
+}
+.timeline .timeline-item:hover {
+  top: 65px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  -o-border-radius: 70px;
+  border-radius: 70px;
+}
+.timeline .timeline-item:hover > .timeline-item-p {
+  visibility: hidden;
+}
+.timeline .timeline-item:hover > .timeline-item-detail {
+  opacity: 1;
+}
+.timeline .timeline-item:hover > .timeline-item-year {
+  opacity: 1;
+}
+.timeline .timeline-item:hover > .timeline-item-line {
+  top: 70px;
+  width: 70px;
+  opacity: 1;
+  height: 40px;
+}
+.timeline .timeline-item:hover > .timeline-item-img {
+  top: 90px;
+  left: -65px;
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+}
 .timeline-change {
   left: 200px;
   opacity: 1;
 }
-
-//联系我们
-.contact-us(@contact-width: 160px,
-@contact-circle-width: 62px,
-@font-size: 20px) {
-  .contact {
-    position: absolute;
-    top: 200px;
-    left: -500px;
-    width: @contact-width;
-    height: @contact-width * 3;
-    opacity: 0;
-    .transition(all,
-    1s,
-    ease-in-out);
-    & .contact-item-hidden {
-      visibility: hidden;
-      opacity: 0;
-    }
-    & .contact-item-change {
-      visibility: visible !important;
-      opacity: 1 !important;
-      left: -300px !important;
-    }
-    & .contact-item {
-      position: relative;
-      display: inline-block;
-      margin: 20px 10px 0 0;
-      left: 0;
-      .transition(all,
-      .5s,
-      ease-in-out);
-      & .contact-circle {
-        top: 0;
-        right: 0;
-        width: @contact-circle-width;
-        height: @contact-circle-width;
-        .border-radius(@contact-circle-width);
-        border: 2px solid #ae956b;
-        font-size: @font-size * 1.5;
-        line-height: @contact-circle-width;
-        text-align: center;
-        color: rgb(174, 149, 107);
-        cursor: pointer;
-        z-index: 999;
-        .transition();
-      }
-      & .contact-circle:hover {
-        color: rgb(0, 0, 0);
-        background: rgb(174, 149, 107);
-        opacity: 1;
-      }
-      & .contact-circle-change {
-        transform: scale(1.2, 1.2);
-        color: rgb(0, 0, 0);
-        background: rgb(174, 149, 107);
-      }
-      & .contact-link,
-      .contact-name {
-        position: absolute;
-        height: 100%;
-        left: @font-size * 5;
-        font-size: @font-size;
-        color: #ae956b;
-        opacity: 0;
-        .transition();
-        width: 250px;
-      }
-      & .contact-name {
-        top: @font-size / 2;
-      }
-      & .contact-link {
-        top: @font-size *2;
-        cursor: pointer;
-      }
-      & .contact-info-change {
-        opacity: 1;
-      }
-    }
-  }
-  .contact-change {
-    left: 45%;
-    opacity: 1;
-  }
+.contact {
+  position: absolute;
+  top: 200px;
+  left: -500px;
+  width: 120px;
+  height: 360px;
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
-
-.contact-us(120px,
-46px,
-15px);
+.contact .contact-item-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.contact .contact-item-change {
+  visibility: visible !important;
+  opacity: 1 !important;
+  left: -300px !important;
+}
+.contact .contact-item {
+  position: relative;
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.contact .contact-item .contact-circle {
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 46px;
+  -webkit-border-radius: 46px;
+  -moz-border-radius: 46px;
+  -ms-border-radius: 46px;
+  -o-border-radius: 46px;
+  border-radius: 46px;
+  border: 2px solid #ae956b;
+  font-size: 22.5px;
+  line-height: 46px;
+  text-align: center;
+  color: #ae956b;
+  cursor: pointer;
+  z-index: 999;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.contact .contact-item .contact-circle:hover {
+  color: #000000;
+  background: #ae956b;
+  opacity: 1;
+}
+.contact .contact-item .contact-circle-change {
+  transform: scale(1.2, 1.2);
+  color: #000000;
+  background: #ae956b;
+}
+.contact .contact-item .contact-link,
+.contact .contact-item .contact-name {
+  position: absolute;
+  height: 100%;
+  left: 75px;
+  font-size: 15px;
+  color: #ae956b;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  width: 250px;
+}
+.contact .contact-item .contact-name {
+  top: 7.5px;
+}
+.contact .contact-item .contact-link {
+  top: 30px;
+  cursor: pointer;
+}
+.contact .contact-item .contact-info-change {
+  opacity: 1;
+}
+.contact-change {
+  left: 45%;
+  opacity: 1;
+}
 #mask {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .9);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
   z-index: 999;
 }
-
 #join-info {
   position: absolute;
   top: 0;
@@ -691,11 +690,104 @@ menu {
   line-height: 135px;
   text-align: center;
   border: 3px solid #000;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, 0.7);
   color: #ae956b;
   z-index: 1000;
 }
-
 @media (min-height: 800px) {
-  .contact-us();
-}*/
+  .contact {
+    position: absolute;
+    top: 200px;
+    left: -500px;
+    width: 160px;
+    height: 480px;
+    opacity: 0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+  .contact .contact-item-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .contact .contact-item-change {
+    visibility: visible !important;
+    opacity: 1 !important;
+    left: -300px !important;
+  }
+  .contact .contact-item {
+    position: relative;
+    display: inline-block;
+    margin: 20px 10px 0 0;
+    left: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .contact .contact-item .contact-circle {
+    top: 0;
+    right: 0;
+    width: 62px;
+    height: 62px;
+    -webkit-border-radius: 62px;
+    -moz-border-radius: 62px;
+    -ms-border-radius: 62px;
+    -o-border-radius: 62px;
+    border-radius: 62px;
+    border: 2px solid #ae956b;
+    font-size: 30px;
+    line-height: 62px;
+    text-align: center;
+    color: #ae956b;
+    cursor: pointer;
+    z-index: 999;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+  }
+  .contact .contact-item .contact-circle:hover {
+    color: #000000;
+    background: #ae956b;
+    opacity: 1;
+  }
+  .contact .contact-item .contact-circle-change {
+    transform: scale(1.2, 1.2);
+    color: #000000;
+    background: #ae956b;
+  }
+  .contact .contact-item .contact-link,
+  .contact .contact-item .contact-name {
+    position: absolute;
+    height: 100%;
+    left: 100px;
+    font-size: 20px;
+    color: #ae956b;
+    opacity: 0;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    width: 250px;
+  }
+  .contact .contact-item .contact-name {
+    top: 10px;
+  }
+  .contact .contact-item .contact-link {
+    top: 40px;
+    cursor: pointer;
+  }
+  .contact .contact-item .contact-info-change {
+    opacity: 1;
+  }
+  .contact-change {
+    left: 45%;
+    opacity: 1;
+  }
+}
